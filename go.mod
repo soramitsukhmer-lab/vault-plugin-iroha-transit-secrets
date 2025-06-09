@@ -8,8 +8,6 @@ replace github.com/hashicorp/vault/api => github.com/soramitsukhmer-lab/vault/ap
 
 replace github.com/hashicorp/vault/sdk => github.com/soramitsukhmer-lab/vault/sdk v1.17.6-iroha-transit-1
 
-replace github.com/pires/go-proxyproto v1.0.0 => github.com/peteski22/go-proxyproto v1.0.0
-
 require (
 	github.com/hashicorp/go-hclog v1.6.3
 	github.com/hashicorp/vault v0.0.0-00010101000000-000000000000
@@ -98,3 +96,8 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+// Migrate replacements from the original repository.
+replace github.com/ma314smith/signedxml v1.1.1 => github.com/moov-io/signedxml v1.1.1
+
+replace github.com/pires/go-proxyproto v1.0.0 => github.com/peteski22/go-proxyproto v1.0.0
