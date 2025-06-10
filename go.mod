@@ -2,11 +2,11 @@ module github.com/soramitsukhmer-lab/vault-plugin-iroha-secrets
 
 go 1.23.9
 
-replace github.com/hashicorp/vault => github.com/soramitsukhmer-lab/vault v1.17.6-iroha-transit-2
+replace github.com/hashicorp/vault => github.com/soramitsukhmer-lab/vault v1.17.6-iroha-transit-3
 
-replace github.com/hashicorp/vault/api => github.com/soramitsukhmer-lab/vault/api v1.17.6-iroha-transit-2
+replace github.com/hashicorp/vault/api => github.com/soramitsukhmer-lab/vault/api v1.17.6-iroha-transit-3
 
-replace github.com/hashicorp/vault/sdk => github.com/soramitsukhmer-lab/vault/sdk v1.17.6-iroha-transit-2
+replace github.com/hashicorp/vault/sdk => github.com/soramitsukhmer-lab/vault/sdk v1.17.6-iroha-transit-3
 
 require (
 	github.com/hashicorp/go-hclog v1.6.3
