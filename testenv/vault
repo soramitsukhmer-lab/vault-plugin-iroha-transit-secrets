@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --rm -it -e VAULT_ADDR=${VAULT_ADDR:-http://127.0.0.1:8200} -e VAULT_TOKEN=${VAULT_TOKEN:-toor} hashicorp/vault:1.17 vault "$@"
