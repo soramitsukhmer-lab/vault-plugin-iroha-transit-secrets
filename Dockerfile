@@ -6,14 +6,15 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=bind,source=.,target=/src,rw \
 <<EOF
     set -euo pipefail
-    export CGO_ENABLED=0
     go mod download
     go mod verify
+    export CGO_ENABLED=0
+    GOLDFLAGS="-s -w"
     for GOOS in darwin linux; do
         export GOOS=${GOOS}
             for GOARCH in amd64 arm64; do
                 export GOARCH=${GOARCH}
-                    go build -o /bin/iroha-transit-${GOOS}-${GOARCH} cmd/vault-plugin-iroha-transit-secrets/main.go
+                    go build -ldflags="${GOLDFLAGS}" -o /bin/iroha-transit-${GOOS}-${GOARCH} cmd/vault-plugin-iroha-transit-secrets/main.go
                 unset GOARCH
             done
         unset GOOS
