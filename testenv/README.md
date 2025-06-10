@@ -50,18 +50,18 @@ curl \
     --header "X-Vault-Token: toor" \
     --request POST \
     --data "${payload}" \
-    http://127.0.0.1:8200/v1/transit/sign/iroha
+    http://127.0.0.1:8200/v1/iroha/sign/iroha
 ```
 
 ```bash
 # Verify a signature
 payload='{
     "input": "KvJOYGLq+NU3U7ZLU2Yu0EJob9sa8otlZrFTfo8etNk=",
-    "signature": "vault:v1:xzBH891iWVXe8YvfVN5ZHvDYCFHDAXAIq5O9vEuJjsn2BJ/D4nvHfhqcvjJiNwhPPKUObFT7t9G6FmA3kMFgDw=="
+    "signature": "vault:v1:E22YwUQdKd/TcWElGBfJgh7kxZMgR3upWVYFROl37AObcvz1sSJtkB9KrOVwpCWmR2hacIoogjLrTb4z4GTPCA=="
 }'
 curl \
     --header "X-Vault-Token: toor" \
     --request POST \
     --data "${payload}" \
-    http://127.0.0.1:8200/v1/transit/verify/iroha
+    http://127.0.0.1:8200/v1/iroha/verify/iroha
 ```
