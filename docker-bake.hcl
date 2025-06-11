@@ -1,9 +1,14 @@
+variable "VERSION" {}
+
 group "default" {
   targets = ["binaries"]
 }
 
 target "binaries" {
-    output = [ "./bin" ]
-    platforms = [ "local" ]
-    target = "binaries"
+  args = {
+      "VERSION" = "${VERSION}"
+  }
+  output = [ "./bin" ]
+  platforms = [ "local" ]
+  target = "binaries"
 }
