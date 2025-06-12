@@ -1,7 +1,11 @@
-variable "VERSION" {}
+variable "VERSION" {
+  default = "latest"
+}
 
-group "default" {
-  targets = ["binaries"]
+target "default" {
+  tags = [
+    "soramitsukhmer-lab/vault-plugin-iroha-transit-secrets:${VERSION}"
+  ]
 }
 
 target "binaries" {

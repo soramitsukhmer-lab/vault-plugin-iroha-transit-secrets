@@ -29,3 +29,9 @@ EOF
 
 FROM scratch AS binaries
 COPY --from=stage1 /out/ /
+
+FROM scratch
+ARG VERSION=0.0.0
+ARG TARGETARCH
+COPY --from=binaries /iroha-transit-${VERSION}-linux-${TARGETARCH} /iroha-transit
+ENTRYPOINT [ "/iroha-transit" ]
