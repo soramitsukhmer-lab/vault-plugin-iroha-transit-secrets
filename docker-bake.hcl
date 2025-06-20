@@ -1,10 +1,10 @@
 variable "VERSION" {
-  default = "latest"
+  default = ""
 }
 
 target "default" {
   tags = [
-    "soramitsukhmer-lab/vault-plugin-iroha-transit-secrets:${VERSION}"
+    "soramitsukhmer-lab/vault-plugin-iroha-transit-secrets:dev"
   ]
 }
 
@@ -12,7 +12,7 @@ target "binaries" {
   args = {
       "VERSION" = "${VERSION}"
   }
-  output = [ "./bin" ]
+  output = [ "./binaries" ]
   platforms = [ "local" ]
   target = "binaries"
 }
