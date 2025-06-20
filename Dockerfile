@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=bind,source=.,target=/src,rw \
 <<EOF
-    set -euo pipefail
+    set -xeuo pipefail
     go mod download
     go mod verify
     export CGO_ENABLED=0
