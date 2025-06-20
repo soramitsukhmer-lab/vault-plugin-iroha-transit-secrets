@@ -1,12 +1,12 @@
 services:
   vault:
     image: hashicorp/vault:1.17
-    command: su-exec root vault server -dev -dev-root-token-id=toor
+    command: server -dev -dev-root-token-id=toor
     environment:
       VAULT_ADDR: http://localhost:8200
       VAULT_TOKEN: toor
       VAULT_LOCAL_CONFIG: |
-        plugin_directory="/vault/plugins"
+        plugin_directory = "/vault/plugins"
     ports:
       - "8200:8200"
     volumes:
