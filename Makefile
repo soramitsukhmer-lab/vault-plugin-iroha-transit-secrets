@@ -1,7 +1,7 @@
-VERSION := 0.0.0-alpha.0
+VERSION := 
 
-it:
+it: clean build
 clean:
-	rm -rf ./bin || true
+	rm -rf ./binaries || true
 build:
 	VERSION=$(VERSION) docker buildx bake binaries

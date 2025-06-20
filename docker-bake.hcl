@@ -1,14 +1,18 @@
-variable "VERSION" {}
+variable "VERSION" {
+  default = ""
+}
 
-group "default" {
-  targets = ["binaries"]
+target "default" {
+  tags = [
+    "soramitsukhmer-lab/vault-plugin-iroha-transit-secrets:dev"
+  ]
 }
 
 target "binaries" {
   args = {
       "VERSION" = "${VERSION}"
   }
-  output = [ "./bin" ]
+  output = [ "./binaries" ]
   platforms = [ "local" ]
   target = "binaries"
 }
