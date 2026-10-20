@@ -30,7 +30,7 @@ You must register your external plugin with the Vault catalog before enabling it
         <plugin_type>                           \
         <plugin_name>
 
-    $ vault plugin info -version=1.17.6-iroha-transit-1 secret iroha-transit
+    $ vault plugin info -version=<semantic_version> <plugin_type> <plugin_name>
     ```
     For example, to register a secrets plugin called mykv that runs on the command line as mykvplugin:
     ```bash
