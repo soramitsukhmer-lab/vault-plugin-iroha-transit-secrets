@@ -23,12 +23,14 @@ You must register your external plugin with the Vault catalog before enabling it
     ```
 2. Use `vault plugin register` to add your plugin to the catalog:
     ```bash
-    vault plugin register                     \
+    $ vault plugin register                     \
         -command <command_to_run_plugin_binary> \
         -sha256 "${PLUGIN_SHA[0]}"              \
         -version "<semantic_version>"           \
         <plugin_type>                           \
-        <plugin_name>                           \
+        <plugin_name>
+
+    $ vault plugin info -version=1.17.6-iroha-transit-1 secret iroha-transit
     ```
     For example, to register a secrets plugin called mykv that runs on the command line as mykvplugin:
     ```bash
